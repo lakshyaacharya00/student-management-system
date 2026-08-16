@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Student Details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="detail-container">
+
+    <!-- Header -->
+
+    <div class="detail-header">
+
+        <div>
+            <h1>Student Details</h1>
+
+            <p>
+                View complete student information.
+            </p>
+        </div>
+
+        <a href="{% url 'home' %}" class="back-btn">
+            ← Back
+        </a>
+
+    </div>
+
+
+    <!-- Student Card -->
+
+    <div class="student-detail-card">
+
+        <div class="student-avatar">
+            {{ student.name|first|upper }}
+        </div>
+
+
+        <div class="student-info">
+
+            <h2>
+                {{ student.name }}
+            </h2>
+
+            <p class="student-id">
+                Student ID: #{{ student.id }}
+            </p>
+
+
+            <div class="info-grid">
+
+                <div class="info-item">
+
+                    <span>
+                        Age
+                    </span>
+
+                    <strong>
+                        {{ student.age }}
+                    </strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span>
+                        Branch
+                    </span>
+
+                    <strong>
+                        {{ student.branch }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Actions -->
+
+    <div class="detail-actions">
+
+        <a
+            href="{% url 'edit_student' student.id %}"
+            class="edit-detail-btn"
+        >
+            Edit Student
+        </a>
+
+
+        <a
+            href="{% url 'delete_student' student.id %}"
+            class="delete-detail-btn"
+            onclick="return confirm('Are you sure you want to delete this student?')"
+        >
+            Delete Student
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

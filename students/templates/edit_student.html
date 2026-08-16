@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit Student
+{% endblock %}
+
+
+{% block content %}
+
+<div class="form-container">
+
+    <div class="form-header">
+
+        <h1>Edit Student</h1>
+
+        <p>
+            Update student details below.
+        </p>
+
+    </div>
+
+
+    <div class="form-card">
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <div class="form-group">
+
+                <label for="name">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value="{{ student.name }}"
+                    placeholder="Enter student name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="age">
+                    Age
+                </label>
+
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    value="{{ student.age }}"
+                    min="1"
+                    max="100"
+                    placeholder="Enter age"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="branch">
+                    Branch
+                </label>
+
+                <input
+                    type="text"
+                    id="branch"
+                    name="branch"
+                    value="{{ student.branch }}"
+                    placeholder="Enter branch"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+                    Update Student
+                </button>
+
+
+                <a
+                    href="{% url 'home' %}"
+                    class="cancel-btn"
+                >
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
