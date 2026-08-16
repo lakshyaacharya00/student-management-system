@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m1dd+vb069qimpk%eudie9d(yh49)nb+vzylrr-m*-0tc%&0e)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,13 +74,9 @@ WSGI_APPLICATION = 'studentmanagment.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'student_management',
-        'USER': 'root',
-        'PASSWORD': "YOUR_PASSWORD",
-        'HOST': 'localhost',
-        'PORT': '3306',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -120,7 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
