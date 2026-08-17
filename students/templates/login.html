@@ -11,6 +11,10 @@
         <h1>Welcome Back</h1>
         <p>Login to Student Management System</p>
 
+        {% if error %}
+    <p class="login-error">{{ error }}</p>
+{% endif %}
+
         <form method="POST">
             {% csrf_token %}
 
