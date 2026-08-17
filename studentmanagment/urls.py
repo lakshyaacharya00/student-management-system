@@ -28,9 +28,15 @@ urlpatterns = [
     path('edit_student/<int:id>/', views.edit_student, name='edit_student'),
     path('delete_student/<int:id>/',views.delete_student,name='delete_student'),
     path('student/<int:id>/', views.student_detail, name='student_detail'),
-    path('login/', auth_views.LoginView.as_view(
-    template_name='login.html'
-), name='login'),
+path(
+    'login/',
+    auth_views.LoginView.as_view(template_name='login.html'),
+    name='login'
+),
 
-path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+path(
+    'logout/',
+    auth_views.LogoutView.as_view(),
+    name='logout'
+),
 ]

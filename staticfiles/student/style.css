@@ -1,0 +1,3157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+
+nav {
+    margin-bottom: 30px;
+}
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.student-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.student-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.student-card h3 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td a {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+
+.dashboard-card {
+    width: 220px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+}
+
+.dashboard-card h2 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.dashboard-card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.student-detail {
+    border: 1px solid #ddd;
+    padding: 25px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.student-detail h2 {
+    margin-top: 0;
+}
+
+.student-detail a {
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Logo */
+
+.logo {
+    text-decoration: none;
+    color: #222;
+
+    font-size: 21px;
+    font-weight: bold;
+}
+
+
+/* Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* Welcome */
+
+.welcome {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* Logout */
+
+.nav-links form {
+    margin: 0;
+}
+
+.logout-btn {
+    border: none;
+    background: none;
+
+    color: #444;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    color: #dc2626;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+
+    color: #777;
+    font-size: 13px;
+
+    margin-top: 50px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   PREMIUM STUDENT MANAGEMENT DASHBOARD
+   BODY IS NOT TOUCHED
+===================================================== */
+
+.home-container {
+    position: relative;
+
+    width: 94%;
+    max-width: 1250px;
+
+    margin: 35px auto 60px;
+    padding: 38px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef4ff 0%,
+            #f6f1ff 45%,
+            #eefaff 100%
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 25px 70px rgba(30, 41, 59, 0.12);
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.home-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: -220px;
+    right: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.22),
+            rgba(99, 102, 241, 0)
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+
+.home-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    bottom: -180px;
+    left: -130px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(14, 165, 233, 0.18),
+            rgba(14, 165, 233, 0)
+        );
+
+    pointer-events: none;
+}
+
+
+.home-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.home-container .page-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+
+.home-container .page-header h1 {
+    margin: 0;
+
+    font-size: 36px;
+    font-weight: 850;
+
+    letter-spacing: -1.2px;
+
+    color: #111827;
+}
+
+
+.home-container .page-header h1::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 5px;
+
+    margin-top: 9px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+}
+
+
+.home-container .page-header p {
+    margin: 10px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   ADD STUDENT BUTTON
+===================================================== */
+
+.home-container .page-header > a {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 750;
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.30);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.home-container .page-header > a:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 17px 32px rgba(79, 70, 229, 0.38);
+}
+
+
+.home-container .page-header > a:active {
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   TOTAL STUDENTS
+===================================================== */
+
+.home-container .dashboard-card {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 150px;
+
+    margin-bottom: 28px;
+
+    padding: 30px 34px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e3a8a 65%,
+            #312e81
+        );
+
+    box-shadow:
+        0 18px 40px rgba(30, 64, 175, 0.25);
+
+    color: white;
+}
+
+
+.home-container .dashboard-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    right: -70px;
+    top: -110px;
+
+    border-radius: 50%;
+
+    border: 45px solid rgba(255,255,255,0.06);
+}
+
+
+.home-container .dashboard-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: 100px;
+    bottom: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.06);
+}
+
+
+.home-container .dashboard-card h2 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: 750;
+}
+
+
+.home-container .dashboard-card p {
+
+    margin: 8px 0 0;
+
+    color: rgba(255,255,255,0.68);
+
+    font-size: 13px;
+}
+
+
+/* NUMBER */
+
+.home-container .dashboard-card strong {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.23),
+            rgba(255,255,255,0.08)
+        );
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    color: white;
+
+    font-size: 32px;
+
+    font-weight: 850;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.2),
+        0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.home-container .search-box {
+
+    margin-bottom: 28px;
+}
+
+
+.home-container .search-box form {
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 7px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.90);
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,0.07);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.home-container .search-box input {
+
+    flex: 1;
+
+    height: 46px;
+
+    padding: 0 16px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111827;
+
+    font-size: 14px;
+}
+
+
+.home-container .search-box input::placeholder {
+    color: #94a3b8;
+}
+
+
+.home-container .search-box input:focus {
+    color: #1e293b;
+}
+
+
+/* SEARCH */
+
+.home-container .search-box button {
+
+    height: 46px;
+
+    padding: 0 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(79,70,229,0.25);
+
+    transition: 0.25s ease;
+}
+
+
+.home-container .search-box button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(79,70,229,0.35);
+}
+
+
+/* =====================================================
+   STUDENT SECTION
+===================================================== */
+
+.home-container .student-section {
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.94);
+
+    border: 1px solid rgba(255,255,255,0.95);
+
+    box-shadow:
+        0 15px 40px rgba(15,23,42,0.08);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.home-container .section-header {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f7f7ff
+        );
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.home-container .section-header h2 {
+
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+
+.home-container .section-header span {
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ede9fe,
+            #dbeafe
+        );
+
+    color: #4f46e5;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    border: 1px solid #ddd6fe;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.home-container .table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.home-container table {
+
+    width: 100%;
+
+    min-width: 680px;
+
+    border-collapse: collapse;
+}
+
+
+.home-container thead {
+
+    background:
+        linear-gradient(
+            90deg,
+            #f8fafc,
+            #f5f3ff
+        );
+}
+
+
+.home-container th {
+
+    padding: 16px 20px;
+
+    color: #64748b;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+.home-container td {
+
+    padding: 17px 20px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+
+.home-container tbody tr {
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.home-container tbody tr:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            #f8faff,
+            #faf8ff
+        );
+}
+
+
+.home-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   STUDENT NAME
+===================================================== */
+
+.home-container .student-name {
+
+    color: #4f46e5;
+
+    text-decoration: none;
+
+    font-weight: 750;
+
+    transition: 0.2s ease;
+}
+
+
+.home-container .student-name:hover {
+
+    color: #7c3aed;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.home-container .action-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.home-container .edit-btn,
+.home-container .delete-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 13px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    transition: 0.2s ease;
+}
+
+
+/* EDIT */
+
+.home-container .edit-btn {
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border: 1px solid #dbeafe;
+}
+
+
+.home-container .edit-btn:hover {
+
+    background: #2563eb;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(37,99,235,0.22);
+}
+
+
+/* DELETE */
+
+.home-container .delete-btn {
+
+    background: #fff1f2;
+
+    color: #e11d48;
+
+    border: 1px solid #ffe4e6;
+}
+
+
+.home-container .delete-btn:hover {
+
+    background: #e11d48;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(225,29,72,0.22);
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.home-container .empty {
+
+    padding: 60px 20px !important;
+
+    color: #94a3b8 !important;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .home-container {
+
+        width: 94%;
+
+        padding: 28px;
+    }
+
+
+    .home-container .page-header h1 {
+
+        font-size: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .home-container {
+
+        width: 96%;
+
+        margin: 22px auto 40px;
+
+        padding: 20px 14px;
+
+        border-radius: 20px;
+    }
+
+
+    .home-container .page-header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 18px;
+    }
+
+
+    .home-container .page-header h1 {
+
+        font-size: 25px;
+
+        line-height: 1.25;
+    }
+
+
+    .home-container .page-header > a {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 14px;
+    }
+
+
+    .home-container .dashboard-card {
+
+        min-height: 125px;
+
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+
+    .home-container .dashboard-card h2 {
+
+        font-size: 18px;
+    }
+
+
+    .home-container .dashboard-card strong {
+
+        width: 62px;
+
+        height: 62px;
+
+        border-radius: 16px;
+
+        font-size: 23px;
+    }
+
+
+    .home-container .search-box form {
+
+        flex-direction: column;
+
+        padding: 8px;
+    }
+
+
+    .home-container .search-box input {
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .home-container .search-box button {
+
+        width: 100%;
+    }
+
+
+    .home-container .student-section {
+
+        border-radius: 17px;
+    }
+
+
+    .home-container .section-header {
+
+        padding: 18px;
+    }
+
+
+    .home-container .section-header h2 {
+
+        font-size: 17px;
+    }
+
+
+    .home-container th,
+    .home-container td {
+
+        padding: 14px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .home-container {
+
+        width: 97%;
+
+        padding: 17px 10px;
+    }
+
+
+    .home-container .page-header h1 {
+
+        font-size: 22px;
+    }
+
+
+    .home-container .dashboard-card {
+
+        padding: 18px;
+    }
+
+
+    .home-container .dashboard-card strong {
+
+        width: 55px;
+
+        height: 55px;
+
+        font-size: 20px;
+    }
+
+
+    .home-container .section-header span {
+
+        padding: 5px 8px;
+
+        font-size: 10px;
+    }
+
+}
+
+/* =========================================
+   ADD STUDENT - COLORFUL UI
+========================================= */
+
+.form-container {
+    width: 92%;
+    max-width: 650px;
+    margin: 50px auto;
+}
+
+
+/* HEADER */
+
+.form-header {
+    margin-bottom: 25px;
+}
+
+.form-header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 800;
+    color: #312e81;
+}
+
+.form-header p {
+    margin-top: 8px;
+    color: #6366f1;
+    font-size: 15px;
+}
+
+
+/* CARD */
+
+.form-card {
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eef2ff
+        );
+
+    border: 1px solid #c7d2fe;
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 45px rgba(79,70,229,.15);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* COLORFUL TOP LINE */
+
+.form-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed,
+            #ec4899
+        );
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #3730a3;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.form-group input {
+    width: 100%;
+    height: 52px;
+
+    box-sizing: border-box;
+
+    padding: 0 16px;
+
+    border: 2px solid #e0e7ff;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #1e1b4b;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .25s ease;
+}
+
+
+.form-group input::placeholder {
+    color: #a5b4fc;
+}
+
+
+.form-group input:hover {
+    border-color: #a5b4fc;
+}
+
+
+.form-group input:focus {
+    border-color: #6366f1;
+
+    background: #fafaff;
+
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,.13);
+}
+
+
+/* BUTTON AREA */
+
+.form-buttons {
+    display: flex;
+
+    gap: 13px;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #ddd6fe;
+}
+
+
+/* ADD BUTTON */
+
+.save-btn {
+    height: 48px;
+
+    padding: 0 26px;
+
+    border: none;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 22px rgba(79,70,229,.30);
+
+    transition: .25s ease;
+}
+
+
+.save-btn:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #6d28d9
+        );
+
+    box-shadow:
+        0 14px 28px rgba(79,70,229,.38);
+}
+
+
+/* CANCEL */
+
+.cancel-btn {
+    height: 48px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #fce7f3;
+
+    border: 1px solid #f9a8d4;
+
+    color: #be185d;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: .25s ease;
+}
+
+
+.cancel-btn:hover {
+    background: #fbcfe8;
+
+    color: #9d174d;
+
+    transform: translateY(-2px);
+}
+
+
+/* MESSAGE */
+
+.form-message {
+    margin-bottom: 20px;
+
+    padding: 13px 16px;
+
+    border-radius: 11px;
+
+    background: #dcfce7;
+
+    border: 1px solid #86efac;
+
+    color: #15803d;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .form-container {
+        width: 94%;
+        margin: 35px auto;
+    }
+
+    .form-header h1 {
+        font-size: 28px;
+    }
+
+    .form-card {
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .form-card {
+        padding: 25px 16px;
+    }
+
+    .form-header h1 {
+        font-size: 25px;
+    }
+
+}
+
+/* ========================================
+   EDIT STUDENT PAGE
+======================================== */
+
+.form-container {
+    width: 92%;
+    max-width: 650px;
+    margin: 50px auto;
+}
+
+
+/* FORM HEADER */
+
+.form-header {
+    margin-bottom: 25px;
+}
+
+.form-header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.form-header p {
+    margin: 8px 0 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* FORM CARD */
+
+.form-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.03),
+        0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* FORM GROUP */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+/* LABEL */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* INPUT */
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+
+/* PLACEHOLDER */
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* HOVER */
+
+.form-group input:hover {
+    border-color: #9ca3af;
+}
+
+
+/* FOCUS */
+
+.form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* BUTTON AREA */
+
+.form-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+    padding-top: 24px;
+
+    border-top: 1px solid #f0f0f0;
+}
+
+
+/* UPDATE BUTTON */
+
+.save-btn {
+    height: 46px;
+
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.save-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(37, 99, 235, 0.20);
+}
+
+
+/* CANCEL BUTTON */
+
+.cancel-btn {
+    height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 22px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+
+    background: white;
+    color: #374151;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .form-container {
+        width: 94%;
+        margin: 30px auto;
+    }
+
+    .form-header h1 {
+        font-size: 26px;
+    }
+
+    .form-header p {
+        font-size: 14px;
+    }
+
+    .form-card {
+        padding: 22px;
+        border-radius: 13px;
+    }
+
+    .form-group input {
+        height: 46px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+
+    .form-container {
+        width: 95%;
+    }
+
+    .form-card {
+        padding: 18px;
+    }
+
+    .form-header h1 {
+        font-size: 24px;
+    }
+}
+
+/* ========================================
+   STUDENT DETAIL PAGE
+======================================== */
+
+.detail-container {
+    width: 92%;
+    max-width: 900px;
+
+    margin: 50px auto;
+}
+
+
+/* HEADER */
+
+.detail-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.detail-header h1 {
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #111827;
+}
+
+.detail-header p {
+    margin-top: 7px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* BACK BUTTON */
+
+.back-btn {
+    text-decoration: none;
+
+    padding: 10px 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    color: #374151;
+
+    background: white;
+
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background: #f9fafb;
+}
+
+
+/* STUDENT CARD */
+
+.student-detail-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.03),
+        0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* AVATAR */
+
+.student-avatar {
+    width: 100px;
+    height: 100px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 38px;
+
+    font-weight: 700;
+}
+
+
+/* STUDENT INFO */
+
+.student-info h2 {
+    margin: 0;
+
+    font-size: 26px;
+
+    color: #111827;
+}
+
+.student-id {
+    margin-top: 6px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* INFO GRID */
+
+.info-grid {
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 25px;
+}
+
+.info-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.info-item span {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.info-item strong {
+    color: #111827;
+
+    font-size: 16px;
+}
+
+
+/* ACTIONS */
+
+.detail-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+.edit-detail-btn,
+.delete-detail-btn {
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.edit-detail-btn {
+    background: #2563eb;
+
+    color: white;
+}
+
+.edit-detail-btn:hover {
+    background: #1d4ed8;
+}
+
+
+.delete-detail-btn {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+.delete-detail-btn:hover {
+    background: #fecaca;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .detail-container {
+        width: 94%;
+
+        margin: 30px auto;
+    }
+
+    .detail-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .detail-header h1 {
+        font-size: 25px;
+    }
+
+    .student-detail-card {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px 20px;
+    }
+
+    .student-avatar {
+        width: 85px;
+        height: 85px;
+
+        font-size: 32px;
+    }
+
+    .student-info h2 {
+        font-size: 23px;
+    }
+
+    .info-grid {
+        justify-content: center;
+
+        gap: 35px;
+    }
+
+    .detail-actions {
+        flex-direction: column;
+    }
+
+    .edit-detail-btn,
+    .delete-detail-btn {
+        text-align: center;
+
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   PREMIUM RESPONSIVE NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #172554 45%,
+            #312e81 100%
+        );
+
+    border-radius: 0 0 20px 20px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.20);
+
+    overflow: hidden;
+}
+
+
+/* Background glow */
+
+.navbar::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -220px;
+    left: 30%;
+
+    border-radius: 50%;
+
+    background: rgba(99, 102, 241, 0.25);
+
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+
+.navbar::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -120px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background: rgba(59, 130, 246, 0.18);
+
+    filter: blur(45px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NAV CONTAINER
+   ========================================================= */
+
+.nav-container {
+    position: relative;
+    z-index: 2;
+
+    width: 92%;
+    max-width: 1250px;
+
+    min-height: 72px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.nav-container .logo {
+    display: flex;
+
+    align-items: center;
+
+    margin-right: auto;
+
+    padding: 9px 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+
+    border-radius: 11px;
+
+    transition: all 0.25s ease;
+}
+
+
+.nav-container .logo::before {
+    content: "🎓";
+
+    width: 38px;
+    height: 38px;
+
+    margin-right: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed
+        );
+
+    font-size: 19px;
+
+    box-shadow:
+        0 7px 18px rgba(79, 70, 229, 0.35);
+
+    transition: 0.25s ease;
+}
+
+
+.nav-container .logo:hover {
+    color: #c7d2fe;
+
+    transform: translateY(-1px);
+}
+
+
+.nav-container .logo:hover::before {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+
+/* =========================================================
+   NORMAL NAV LINKS
+   ========================================================= */
+
+.nav-container > a:not(.logo) {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.nav-container > a:not(.logo):hover {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    transform: translateY(-1px);
+}
+
+
+/* Animated underline */
+
+.nav-container > a:not(.logo)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 5px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #818cf8;
+
+    transform: translateX(-50%);
+
+    transition: width 0.25s ease;
+}
+
+
+.nav-container > a:not(.logo):hover::after {
+    width: 55%;
+}
+
+
+/* =========================================================
+   WELCOME USER
+   ========================================================= */
+
+.welcome {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-left: 5px;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(99, 102, 241, 0.14);
+
+    border:
+        1px solid rgba(129, 140, 248, 0.22);
+
+    color: #e0e7ff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+.welcome::before {
+    content: "👤";
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LOGOUT FORM
+   ========================================================= */
+
+.logout-form {
+    display: flex;
+
+    align-items: center;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+   ========================================================= */
+
+.logout-btn {
+    margin-left: 5px;
+
+    padding: 9px 15px;
+
+    border:
+        1px solid rgba(248, 113, 113, 0.28);
+
+    border-radius: 9px;
+
+    background:
+        rgba(239, 68, 68, 0.10);
+
+    color: #fecaca;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.22s ease;
+}
+
+
+.logout-btn:hover {
+    background: #ef4444;
+
+    border-color: #ef4444;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(239, 68, 68, 0.28);
+}
+
+
+.logout-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.nav-container > a[href*="login"] {
+    padding: 9px 17px !important;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        ) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    color: white !important;
+
+    box-shadow:
+        0 7px 18px rgba(79, 70, 229, 0.28);
+}
+
+
+.nav-container > a[href*="login"]:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #6366f1
+        ) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 24px rgba(79, 70, 229, 0.38);
+}
+
+
+/* Login button ko underline nahi */
+
+.nav-container > a[href*="login"]::after {
+    display: none;
+}
+
+
+/* =========================================================
+   HIDE OLD HR
+   ========================================================= */
+
+.navbar + hr {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-container {
+        width: 94%;
+
+        gap: 4px;
+    }
+
+
+    .nav-container .logo {
+        font-size: 16px;
+    }
+
+
+    .nav-container .logo::before {
+        width: 35px;
+        height: 35px;
+
+        font-size: 17px;
+    }
+
+
+    .nav-container > a:not(.logo) {
+        padding: 9px 10px;
+
+        font-size: 13px;
+    }
+
+
+    .welcome {
+        padding: 8px 10px;
+
+        font-size: 12px;
+    }
+
+
+    .logout-btn {
+        padding: 8px 11px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        border-radius: 0 0 16px 16px;
+    }
+
+
+    .nav-container {
+        width: 94%;
+
+        min-height: auto;
+
+        padding: 12px 0;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 5px;
+    }
+
+
+    /* Logo full width */
+
+    .nav-container .logo {
+        width: 100%;
+
+        justify-content: center;
+
+        margin: 0 0 7px;
+
+        font-size: 17px;
+    }
+
+
+    .nav-container > a:not(.logo) {
+        padding: 8px 11px;
+
+        font-size: 12px;
+    }
+
+
+    .welcome {
+        margin-left: 0;
+
+        padding: 7px 9px;
+
+        font-size: 11px;
+    }
+
+
+    .logout-btn {
+        padding: 7px 10px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .nav-container {
+        gap: 4px;
+    }
+
+
+    .nav-container .logo {
+        font-size: 15px;
+    }
+
+
+    .nav-container .logo::before {
+        width: 32px;
+        height: 32px;
+
+        margin-right: 8px;
+
+        font-size: 16px;
+    }
+
+
+    .nav-container > a:not(.logo) {
+        padding: 7px 8px;
+
+        font-size: 11px;
+    }
+
+
+    .welcome {
+        padding: 6px 7px;
+
+        font-size: 10px;
+    }
+
+
+    .welcome::before {
+        display: none;
+    }
+
+
+    .logout-btn {
+        padding: 6px 8px;
+
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .nav-container .logo {
+        font-size: 14px;
+    }
+
+
+    .nav-container > a:not(.logo) {
+        padding: 6px 6px;
+
+        font-size: 10px;
+    }
+
+
+    .welcome {
+        font-size: 9px;
+    }
+
+
+    .logout-btn {
+        font-size: 9px;
+
+        padding: 6px 7px;
+    }
+
+}
+
+/* =========================================================
+   PREMIUM LOGIN PAGE
+   BODY CSS IS NOT TOUCHED
+========================================================= */
+
+.login-page {
+    position: relative;
+
+    min-height: 78vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 20px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(59, 130, 246, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(139, 92, 246, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f5f3ff,
+            #ecfeff
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.login-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(25px);
+}
+
+
+.glow-one {
+    width: 300px;
+    height: 300px;
+
+    top: -140px;
+    left: -100px;
+
+    background: rgba(59, 130, 246, 0.25);
+}
+
+
+.glow-two {
+    width: 320px;
+    height: 320px;
+
+    right: -120px;
+    bottom: -150px;
+
+    background: rgba(139, 92, 246, 0.25);
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.14),
+        0 8px 20px rgba(79, 70, 229, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    animation: login-card-show 0.5s ease;
+}
+
+
+@keyframes login-card-show {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.login-logo {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 12px 28px rgba(79, 70, 229, 0.30);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.login-header {
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+.login-header h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+}
+
+
+.login-header p {
+    margin: 9px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+.login-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.login-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.login-field label {
+    color: #334155;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-box {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+    height: 52px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    transition: 0.25s ease;
+}
+
+
+.input-box > span {
+    margin-right: 10px;
+
+    font-size: 16px;
+
+    opacity: 0.7;
+}
+
+
+.input-box input {
+    flex: 1;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #1e293b;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+
+.input-box input::placeholder {
+    color: #94a3b8;
+}
+
+
+.input-box:focus-within {
+    background: white;
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+
+/* =========================================================
+   PASSWORD SHOW / HIDE
+========================================================= */
+
+.password-toggle {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    opacity: 0.55;
+
+    transition: 0.2s ease;
+}
+
+
+.password-toggle:hover {
+    opacity: 1;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-btn {
+    width: 100%;
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 4px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.28);
+
+    transition: 0.25s ease;
+}
+
+
+.login-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 32px rgba(79, 70, 229, 0.35);
+}
+
+
+.login-btn:active {
+    transform: translateY(-1px);
+}
+
+
+.login-arrow {
+    font-size: 21px;
+
+    transition: 0.2s ease;
+}
+
+
+.login-btn:hover .login-arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   ERROR / MESSAGE
+========================================================= */
+
+.login-message {
+    margin-bottom: 18px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+
+    color: #be123c;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.login-footer {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   BACK TO HOME BUTTON
+========================================================= */
+
+.home-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 145px;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eef2ff
+        );
+
+    border: 1px solid #dbe3f0;
+
+    color: #4f46e5;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+
+.home-link:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #e0e7ff
+        );
+
+    border-color: #c7d2fe;
+
+    color: #3730a3;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(79, 70, 229, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .login-page {
+        min-height: 75vh;
+
+        padding: 35px 15px;
+
+        border-radius: 18px;
+    }
+
+
+    .login-card {
+        padding: 30px 22px;
+
+        border-radius: 21px;
+    }
+
+
+    .login-logo {
+        width: 58px;
+        height: 58px;
+
+        font-size: 27px;
+
+        border-radius: 17px;
+    }
+
+
+    .login-header h1 {
+        font-size: 26px;
+    }
+
+
+    .login-header p {
+        font-size: 12px;
+    }
+
+
+    .input-box {
+        height: 50px;
+    }
+
+
+    .login-btn {
+        height: 51px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .login-card {
+        padding: 25px 18px;
+    }
+
+
+    .login-header h1 {
+        font-size: 24px;
+    }
+
+
+    .login-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+}

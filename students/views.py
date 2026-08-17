@@ -1,10 +1,9 @@
-# from django.http import HttpResponse
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .models import Student
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
 from django.contrib import messages
+
 
 @login_required
 def home(request):
@@ -27,9 +26,6 @@ def home(request):
     })
 
 
-from django.shortcuts import render
-from .models import Student
-
 @login_required
 def add_student(request):
 
@@ -44,13 +40,16 @@ def add_student(request):
             age=age,
             branch=branch
         )
-        messages.success(request, "Student added successfully!")
 
+        messages.success(
+            request,
+            "Student added successfully!"
+        )
 
-        return render(request, 'add_student.html', {
-        })
+        return redirect('home')
 
     return render(request, 'add_student.html')
+
 
 @login_required
 def edit_student(request, id):
@@ -58,24 +57,39 @@ def edit_student(request, id):
     student = Student.objects.get(id=id)
 
     if request.method == 'POST':
+
         student.name = request.POST.get('name')
         student.age = request.POST.get('age')
         student.branch = request.POST.get('branch')
 
         student.save()
 
+        messages.success(
+            request,
+            "Student updated successfully!"
+        )
+
         return redirect('home')
-    messages.success(request, "Student updated successfully!")
 
     return render(request, 'edit_student.html', {
         'student': student
     })
 
+
 @login_required
-def delete_student(student,id):
+def delete_student(request, id):
+
     student = Student.objects.get(id=id)
+
     student.delete()
+
+    messages.success(
+        request,
+        "Student deleted successfully!"
+    )
+
     return redirect('home')
+
 
 @login_required
 def student_detail(request, id):
@@ -85,4 +99,3 @@ def student_detail(request, id):
     return render(request, 'student_detail.html', {
         'student': student
     })
-# Create your views here.
