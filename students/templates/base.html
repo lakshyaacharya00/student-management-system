@@ -15,15 +15,19 @@
 
     <nav class="navbar">
         <div class="nav-container">
+            
 
             <a href="{% url 'home' %}" class="logo">
                 Student Management
             </a>
-    <a href="{% url 'home' %}">Home</a>
 
-    <a href="{% url 'add_student' %}">Add Student</a>
+
+  
 
     {% if user.is_authenticated %}
+      <a href="{% url 'home' %}">Home</a>
+
+    <a href="{% url 'add_student' %}">Add Student</a>
 
         <span class="welcome">Welcome, {{ user.username }}</span>
 
