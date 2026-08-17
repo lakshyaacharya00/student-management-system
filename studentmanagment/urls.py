@@ -14,29 +14,54 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 from students import views
 from django.contrib.auth import views as auth_views
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.home , name='home'),
-    # path('about/',views.about, name='about'),
-    # path('contact/',views.contact, name='contact'),
-    path('add_student',views.add_student, name = 'add_student'),
-    path('edit_student/<int:id>/', views.edit_student, name='edit_student'),
-    path('delete_student/<int:id>/',views.delete_student,name='delete_student'),
-    path('student/<int:id>/', views.student_detail, name='student_detail'),
-path(
-    'login/',
-    auth_views.LoginView.as_view(template_name='login.html'),
-    name='login'
-),
 
-path(
-    'logout/',
-    auth_views.LogoutView.as_view(),
-    name='logout'
-),
+urlpatterns = [
+
+    path('admin/', admin.site.urls),
+
+    path('', views.home, name='home'),
+
+    path(
+        'add_student/',
+        views.add_student,
+        name='add_student'
+    ),
+
+    path(
+        'edit_student/<int:id>/',
+        views.edit_student,
+        name='edit_student'
+    ),
+
+    path(
+        'delete_student/<int:id>/',
+        views.delete_student,
+        name='delete_student'
+    ),
+
+    path(
+        'student/<int:id>/',
+        views.student_detail,
+        name='student_detail'
+    ),
+
+    path(
+        'login/',
+        auth_views.LoginView.as_view(
+            template_name='login.html'
+        ),
+        name='login'
+    ),
+
+    path(
+        'logout/',
+        auth_views.LogoutView.as_view(),
+        name='logout'
+    ),
 ]
